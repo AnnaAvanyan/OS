@@ -4,38 +4,6 @@
 #include <algorithm>
 #include "Complex.h"
 
-//cin>>real>>imaginary;
-std::istream& operator>>(std::istream& in, Complex& complexNum)
-{
-	in >> complexNum.mReal >> complexNum.mImaginary;
-	return in;
-}
-//outputs the complex number -> mReal + mImaginary*i 
-std::ostream& operator<<(std::ostream& output, const Complex& complexNum)
-{
-	char imaginary = 'i';
-	if (complexNum.mReal == 0)
-	{
-		output << complexNum.mReal;
-		return output;
-	}
-	else if (complexNum.mImaginary == 0)
-	{
-		output << complexNum.mReal;
-		return output;
-	}
-	else if (complexNum.mImaginary > 0)
-	{
-		output << complexNum.mReal << "+" << complexNum.mImaginary << imaginary;
-		return output;
-	}
-	else
-	{
-		output << complexNum.mReal << complexNum.mImaginary << imaginary;
-		return output;
-	}
-}
-
 void  sort(std::vector<Complex>& v)
 {
 	int n = v.size();
